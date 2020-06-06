@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:panel id="telalogin" header="Tela Login"
+			style="width:60%; margin:auto;">
+			<h:panelGrid columns="2" cellpadding="5" style="margin:auto;">
+				<p:outputLabel for="login" value="Login:" />
+				<p:inputText id="login" value="#{LoginBean.usuario.email}" />
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:password id="senha" value="#{LoginBean.usuario.senha}" />
+			</h:panelGrid>
+			<h:panelGrid columns="3" cellpadding="4" style="margin:auto;">
+				<p:commandButton title="Entrar" value="Entrar" update="@form"
+					action="#{LoginBean.entrar}" />
+				<p:commandButton title="
+					Esqueceu Senha"
+					value="Esqueceu Senha" />
+				<p:commandButton title="Cadastrar" value="Cadastrar" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

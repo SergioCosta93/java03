@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Esqueceu Senha</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:panel header="Tela Recuperar Senha"
+			style="width:60%; margin:auto;">
+			<h:panelGrid columns="2" cellpadding="5" style="margin:auto;">
+				<p:outputLabel for="email" value="Informe email:" />
+				<p:inputText id="email" value="#{EsqueceuSenhaBean.emailInformado}" />
+
+			</h:panelGrid>
+			<h:panelGrid columns="2" cellpadding="4" style="margin:auto;">
+				<p:commandButton title="Enviar" value="Enviar" update="@form"
+					action="#{EsqueceuSenhaBean.recuperarSenha}" />
+				<p:commandButton title="Cancelar" value="Cancelar" update="@form"
+					action="#{EsqueceuSenhaBean.cencelar}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
